@@ -1,3 +1,4 @@
+
 class kancso_feladat:
     def __init__(self, ke, c):
         self.kezdo = ke
@@ -48,6 +49,23 @@ class kancso_feladat:
             T = min(a3, self.Max2 - a2)
             uj_allapot = (a1, a2 + T, a3-T)
             gyerekek.append(("3->2", uj_allapot))
+
+        return gyerekek
+
+    def rekovetkezo2(self,allapot):
+        a1, a2, a3=allapot
+        gyerekek=[]
+        korsok = [a1, a2, a3]
+        maxok = [self.Max1, self.Max2, self.Max3]
+
+        for honnan in range(0,3):
+            for hova in range(0,3):
+                if korsok[honnan]!=0 and korsok[hova]!=maxok[hova] and korsok[honnan]!=korsok[hova]:
+                    T=min(korsok[honnan], maxok[hova]-korsok[hova])
+                    uj_allapot = list(korsok)
+                    uj_allapot[honnan] -= T
+                    uj_allapot[hova] += T
+                    gyerekek.append((f"{honnan + 1}->{hova + 1}", tuple(uj_allapot)))
 
         return gyerekek
 
