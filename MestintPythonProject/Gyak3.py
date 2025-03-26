@@ -1,13 +1,16 @@
-class Hanoi_problema:
+from keres import Feladat
+
+
+class Hanoi_problema(Feladat):
     def __init__(self,ke,c):
-        self.kezdo = ke
-        self.cel = c
+        self.kezdő = ke
+        self.cél = c
 
 
-    def celteszt(self,allapot):
-        return allapot == self.cel
+    def célteszt(self,allapot):
+        return allapot == self.cél
 
-    def rakovetkezo(self,a):
+    def rákövetkező(self,a):
         gyerekek = []
 
         for melyiket in range(0,3):

@@ -1,4 +1,4 @@
-class n_kiralyno_problema:
+class n_kiralyno_problema :
     def __init__(self,k,c):
         self.kezdő = k
         self.cél = c
@@ -31,4 +31,3 @@ class n_kiralyno_problema:
 
 if __name__ == "__main__":
     k = n_kiralyno_problema((-1,-1,-1,-1,-1,-1,-1,-1,0),8)
-    
